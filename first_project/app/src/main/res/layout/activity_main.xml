@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <ImageView
+        android:id="@+id/photo_image_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/back_photo" />
+
+    <View
+        android:id="@+id/view_box"
+        android:layout_width="match_parent"
+        android:layout_height="242dp"
+        android:layout_alignParentBottom="true"
+        android:background="#2F03A9F4" />
+
+    <TextView
+        android:id="@+id/Image_networks"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50px"
+        android:text="Image networks"
+        android:textColor="@android:color/background_light"
+        android:textSize="50sp"
+        android:textStyle="italic" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="20sp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="200sp"
+        android:text="About us: "
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:textStyle="italic" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="20sp"
+        android:layout_marginBottom="144dp"
+        android:text="we are a company that specializes in taking photo's and or editing photo's"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        android:textStyle="italic" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="19dp"
+        android:layout_marginBottom="92dp"
+        android:text="Contact information: "
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:textStyle="italic" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="20sp"
+        android:layout_marginBottom="64dp"
+        android:text="Call us on: 0612345678"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        android:textStyle="italic" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="20sp"
+        android:layout_marginBottom="36dp"
+        android:text="Email: Contact@imaginetworks.com"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        android:textStyle="italic" />
+
+
+</RelativeLayout>
