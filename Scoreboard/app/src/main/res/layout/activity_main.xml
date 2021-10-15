@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@id/button_Blue_Team"
+        android:layout_alignTop="@id/button_Blue_Team"
+        android:layout_marginStart="44dp"
+        android:layout_marginLeft="47dp"
+        android:layout_marginTop="-36dp"
+        android:text="Blue Team"
+        android:textSize="25sp"
+        />
+
+    <Button
+        android:id="@+id/button_Blue_Team"
+        android:layout_width="205dp"
+        android:layout_height="250dp"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:background="#002BFF"
+        android:textSize="50sp"
+        android:text="@string/B0"
+        android:onClick="valueBlueTeam"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@id/button_Red_Team"
+        android:layout_alignTop="@id/button_Red_Team"
+        android:layout_marginStart="44dp"
+        android:layout_marginLeft="47dp"
+        android:layout_marginTop="-36dp"
+        android:text="Red Team"
+        android:textSize="25sp"
+        />
+
+    <Button
+        android:id="@+id/button_Red_Team"
+        android:layout_width="205dp"
+        android:layout_height="250dp"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:background="#FB0404"
+        android:textSize="50sp"
+        android:text="@string/R0"
+        android:onClick="valueRedTeam"
+        />
+
+    <Button
+        android:id="@+id/reset_Team_Score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="50dp"
+        android:onClick="Reset_Score"
+        android:text="Reset Score" />
+
+</RelativeLayout>
