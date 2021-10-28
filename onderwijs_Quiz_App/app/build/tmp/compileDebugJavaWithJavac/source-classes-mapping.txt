@@ -1,6 +1,0 @@
-com/example/onderwijs_quiz_app/MainActivity.java
- com.example.onderwijs_quiz_app.MainActivity
-com/example/onderwijs_quiz_app/BuildConfig.java
- com.example.onderwijs_quiz_app.BuildConfig
-com/example/onderwijs_quiz_app/quizPage1.java
- com.example.onderwijs_quiz_app.quizPage1
