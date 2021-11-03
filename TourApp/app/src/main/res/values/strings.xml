@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">TourApp</string>
+    <string name="volgende">volgende</string>
+    <string name="Volgende" />
+    <string name="info" />
+    <string name="home">Home</string>
+</resources>
