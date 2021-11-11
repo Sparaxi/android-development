@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <Button
+        android:id="@+id/aviodomeMain"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="175dp"
+        android:background="#1F95AA"
+        android:onClick="aviodromeActivity"
+        android:text="Aviodome"
+        android:textColor="@color/white"
+        android:textSize="25sp" />
+
+
+    <Button
+        android:id="@+id/batavialandMain"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="100dp"
+        android:background="#53B139"
+        android:onClick="batavialandActivity"
+        android:text="bataviaLand"
+        android:textColor="@color/white"
+        android:textSize="25sp" />
+
+    <Button
+        android:id="@+id/natuurparkMain"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="25dp"
+        android:background="#287A22"
+        android:onClick="natuurparkActivity"
+        android:text="Natuurpark"
+        android:textColor="@color/white"
+        android:textSize="25sp" />
+
+    <Button
+        android:id="@+id/bataviastadMain"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="250dp"
+        android:background="#278C8C"
+        android:onClick="bataviastadActivity"
+        android:text="bataviaStad"
+        android:textColor="@color/white"
+        android:textSize="25sp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="100dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/lelystad" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Lelystad Locations"
+        android:textSize="35dp"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:background="#43000000"
+        />
+
+
+</RelativeLayout>

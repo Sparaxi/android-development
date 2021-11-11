@@ -29,13 +29,13 @@ public class MainActivity extends AppCompatActivity {
             TextView textView = findViewById(R.id.correct_TextView);
             textView.setVisibility(View.VISIBLE);
             TextView t = findViewById(R.id.Wrong_TextView);
-            t.setVisibility(View.INVISIBLE);
+            t.setVisibility(View.GONE);
         }
         if (cb1.isChecked()) {
             TextView t = findViewById(R.id.Wrong_TextView);
             t.setVisibility(View.VISIBLE);
             TextView textView = findViewById(R.id.correct_TextView);
-            textView.setVisibility(View.INVISIBLE);
+            textView.setVisibility(View.GONE);
         }
     }
 

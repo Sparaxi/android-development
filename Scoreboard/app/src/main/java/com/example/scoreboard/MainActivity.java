@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void displayRed(int quantity) {
-        TextView redQuantityTextView = (TextView) findViewById(R.id.button_Red_Team);
+        TextView redQuantityTextView = findViewById(R.id.button_Red_Team);
         redQuantityTextView.setText("" + quantityRed);
     }
 
@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void displayblue(int quantity) {
-        TextView blueQuantityTextView = (TextView) findViewById(R.id.button_Blue_Team);
+        TextView blueQuantityTextView = findViewById(R.id.button_Blue_Team);
         blueQuantityTextView.setText("" + quantityBlue);
     }
 
@@ -45,9 +45,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void displayReset(int quantityBlue, int quantityRed) {
-        TextView BluequantityTextView = (TextView) findViewById(R.id.button_Blue_Team);
+        TextView BluequantityTextView = findViewById(R.id.button_Blue_Team);
         BluequantityTextView.setText("0");
-        TextView RedquantityTextView = (TextView) findViewById(R.id.button_Red_Team);
+        TextView RedquantityTextView = findViewById(R.id.button_Red_Team);
         RedquantityTextView.setText("0");
 
     }
