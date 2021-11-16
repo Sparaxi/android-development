@@ -4,41 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
+
     >
 
+    <ImageView
+        android:layout_width="1000dp"
+        android:layout_height="1000dp"
+        android:background="@drawable/achtergrond"
 
-    <SeekBar
-        android:id="@+id/playTime"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="100dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="500dp"
-        />
-
-    <Button
-        android:id="@+id/nextSongButton"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_alignTop="@+id/playTime"
-        android:layout_alignParentEnd="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginRight="80dp"
-        android:layout_marginTop="50dp"
-        android:background="@drawable/next_song"
-        />
-
-    <Button
-        android:id="@+id/previousSongButton"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="80dp"
-        android:layout_alignTop="@+id/playTime"
-        android:layout_marginTop="50dp"
-        android:background="@drawable/previous_song"
         />
 
     <Button
@@ -46,16 +19,13 @@
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_centerHorizontal="true"
-        android:layout_alignTop="@+id/playTime"
         android:layout_marginTop="50dp"
-        android:background="@drawable/playbuttonfileish"
-        />
+        android:background="@drawable/playbuttonfileish" />
 
     <Button
         android:id="@+id/pauseButton"
         android:layout_width="48dp"
         android:layout_height="48dp"
-        android:layout_alignTop="@+id/playTime"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
         android:visibility="gone"

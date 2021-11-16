@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="wrap_content"
+        android:layout_height="585dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        />
+
+    <TextView
+        android:id="@+id/sRC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Student report card"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="16dp"
+        android:textSize="32sp"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/sRC"
+        android:layout_marginBottom="-76dp"
+        android:text="@string/studentname"
+        android:textSize="32sp"
+        android:layout_centerHorizontal="true"/>
+
+
+</RelativeLayout>

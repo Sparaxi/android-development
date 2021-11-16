@@ -20,8 +20,7 @@ public class MainActivity extends AppCompatActivity implements MediaPlayer.OnPre
 
         Button playMedia = findViewById(R.id.playButton);
         Button pauseMedia = findViewById(R.id.pauseButton);
-        Button nextSongButton = findViewById(R.id.nextSongButton);
-        Button previousSongButton = findViewById(R.id.previousSongButton);
+
 
         String url = "https://server-24.stream-server.nl:18334/;stream.mp3"; // your URL here
         MediaPlayer mediaPlayer = new MediaPlayer();
@@ -38,6 +37,7 @@ public class MainActivity extends AppCompatActivity implements MediaPlayer.OnPre
         }
         mediaPlayer.setOnPreparedListener(this);
         mediaPlayer.prepareAsync();
+
 
 
         playMedia.setOnClickListener(new View.OnClickListener() {
@@ -67,4 +67,6 @@ public class MainActivity extends AppCompatActivity implements MediaPlayer.OnPre
     public void onPrepared(MediaPlayer mp) {
 
     }
+
+
 }
