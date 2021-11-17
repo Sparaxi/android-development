@@ -1,11 +1,10 @@
-package com.example.studentreportcard;
+package com.example.studentreportcardv2;
 
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -14,11 +13,11 @@ import androidx.annotation.Nullable;
 import java.util.ArrayList;
 
 
-public class PersonAdapter extends ArrayAdapter<Person> {
-    private Context mContext;
+public class schoolClassesAdapter extends ArrayAdapter<schoolClasses> {
     private int mResource;
+    private Context mContext;
 
-    public PersonAdapter(@NonNull Context context, int resource, @NonNull ArrayList<Person> objects) {
+    public schoolClassesAdapter(@NonNull Context context, int resource, @NonNull ArrayList<schoolClasses> objects) {
         super(context, resource, objects);
         this.mContext = context;
         this.mResource = resource;
@@ -31,13 +30,13 @@ public class PersonAdapter extends ArrayAdapter<Person> {
 
         convertView = layoutInflater.inflate(mResource, parent, false);
 
-        ImageView imageView = convertView.findViewById(R.id.image);
+        TextView classGrade = convertView.findViewById(R.id.classGrade);
 
-        TextView txtName = convertView.findViewById(R.id.txtname);
+        TextView className = convertView.findViewById(R.id.className);
 
-        imageView.setImageResource(getItem(position).getImage());
+        className.setText(getItem(position).getClassName());
 
-        txtName.setText(getItem(position).getName());
+        classGrade.setText(getItem(position).getClassGrade());
 
 
 

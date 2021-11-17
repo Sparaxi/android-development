@@ -10,11 +10,11 @@
     <ListView
         android:id="@+id/listView"
         android:layout_width="wrap_content"
-        android:layout_height="585dp"
-        android:layout_alignParentEnd="true"
+        android:layout_height="400dp"
+        android:layout_alignBottom="@+id/sn"
         android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        />
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true" />
 
     <TextView
         android:id="@+id/sRC"
@@ -27,13 +27,14 @@
         android:layout_centerHorizontal="true"/>
 
     <TextView
+        android:id="@+id/sn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/sRC"
+        android:layout_centerHorizontal="true"
         android:layout_marginBottom="-76dp"
         android:text="@string/studentname"
-        android:textSize="32sp"
-        android:layout_centerHorizontal="true"/>
+        android:textSize="32sp" />
 
 
 </RelativeLayout>
