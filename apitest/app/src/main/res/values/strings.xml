@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">api test</string>
+
+    <string name="search_bCity">City ID</string>
+    <string name="city_Location">City Location</string>
+    <string name="weather_by_id">weather By ID</string>
+</resources>

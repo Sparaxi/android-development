@@ -10,11 +10,12 @@
     <ImageView
         android:layout_width="1000dp"
         android:layout_height="1000dp"
-        android:background="@drawable/achtergrond"
+        android:background="@drawable/achtergrond">
 
-<<<<<<< Updated upstream
-        />
-=======
+    </ImageView>
+
+
+
     <SeekBar
         android:id="@+id/playTime"
         android:layout_width="match_parent"
@@ -31,10 +32,9 @@
         android:layout_alignTop="@+id/playTime"
         android:layout_alignParentEnd="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginEnd="80dp"
         android:layout_marginTop="50dp"
-        android:background="@drawable/next_song"
-        />
+        android:layout_marginEnd="80dp"
+        android:background="@drawable/next_song" />
 
     <Button
         android:id="@+id/previousSongButton"
@@ -46,23 +46,23 @@
         android:layout_marginStart="80dp"
         android:layout_marginTop="50dp"
         android:background="@drawable/previous_song" />
->>>>>>> Stashed changes
+
 
     <Button
         android:id="@+id/playButton"
         android:layout_width="48dp"
         android:layout_height="48dp"
-<<<<<<< Updated upstream
+
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
         android:background="@drawable/playbuttonfileish" />
-=======
+
         android:layout_alignTop="@+id/playTime"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
         android:background="@drawable/playbuttonfileish"
          />
->>>>>>> Stashed changes
+
 
     <Button
         android:id="@+id/pauseButton"
