@@ -1,5 +1,6 @@
 package com.example.apitest;
 
+import android.content.Context;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -15,41 +16,53 @@ import java.util.List;
 
 public class WeatherDataService {
 
-    public String getCityID(String cityName){
+    static Context context;
 
+    public WeatherDataService(Context context) {
+        this.context = context;
     }
 
-    public List<WeatherReportModel> getCityForceCastByID(String cityID) {
-        String url = "https://www.metaweather.com/api/location/search/?query=" + searchWeatherData.getText().toString();
+    public static final String QUERY_FOR_CITY_ID = "https://www.metaweather.com/api/location/search/?query=";
 
-        JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
-            @Override
-            public void onResponse(JSONArray response) {
-                String cityID= "";
-                try {
-                    JSONObject cityInfo = response.getJSONObject(0);
-                    cityID = cityInfo.getString("woeid");
-                } catch (JSONException e) {
-                    e.printStackTrace();
+    public static String getCityID(String cityName) {
+
+            String url = QUERY_FOR_CITY_ID + cityName;
+
+            JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
+                @Override
+                public void onResponse(JSONArray response) {
+                    String cityID= "";
+                    try {
+                        JSONObject cityInfo = response.getJSONObject(0);
+                        cityID = cityInfo.getString("woeid");
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+
+
+                    Toast.makeText(context, "City ID = " + cityID, Toast.LENGTH_SHORT).show();
+
                 }
+            },new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
 
+                }
+            });
+            MySingleton.getInstance(context).addToRequestQueue(request);
 
-                Toast.makeText(MainActivity.this, "City ID = " + cityID, Toast.LENGTH_SHORT).show();
-
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-
-            }
-        });
-        MySingleton.getInstance(MainActivity.this).addToRequestQueue(request);
+            return(cityName);
+        }
     }
 
-    }
 
-    public List<WeatherReportModel> getCityForeCastByName(String cityName) {
+//    public List<WeatherReportModel> getCityForeCastByID(String cityID){
+//
+//    }
+//
+//    public List<WeatherReportModel> getCityForeCastByName(String cityName) {
+//
+//
+//    }
 
 
-    }
-}

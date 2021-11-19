@@ -43,24 +43,28 @@ public class MainActivity extends AppCompatActivity {
 
         search_ByCity.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
+                WeatherDataService weatherDataService = new WeatherDataService(MainActivity.this);
 
-
-
+                String cityID = weatherDataService.getCityID(searchWeatherData.getText().toString());
+                Toast.makeText(MainActivity.this, "im here" + cityID, Toast.LENGTH_SHORT).show();
+            }
         });
+
 
         search_By_Location.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
 
             }
         });
 
         city_Location.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Toast.makeText(MainActivity.this, "" + searchWeatherData, Toast.LENGTH_SHORT).show();
+            public void onClick(View v) {
+
             }
         });
     }
+
 }
