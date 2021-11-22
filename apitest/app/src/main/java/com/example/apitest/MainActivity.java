@@ -25,7 +25,8 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
+    WeatherDataService weatherDataService = new WeatherDataService(MainActivity.this);
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,10 +45,18 @@ public class MainActivity extends AppCompatActivity {
         search_ByCity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                WeatherDataService weatherDataService = new WeatherDataService(MainActivity.this);
 
-                String cityID = weatherDataService.getCityID(searchWeatherData.getText().toString());
-                Toast.makeText(MainActivity.this, "im here" + cityID, Toast.LENGTH_SHORT).show();
+                weatherDataService.getCityID(searchWeatherData.getText().toString(), new WeatherDataService.VolleyResponseListener() {
+                    @Override
+                    public void onError(String message) {
+                        Toast.makeText(MainActivity.this, "Oops something is wrong...", Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onResponse(String cityID) {
+                        Toast.makeText(MainActivity.this, "City ID = " + cityID, Toast.LENGTH_SHORT).show();
+                    }
+                });
             }
         });
 
@@ -55,6 +64,18 @@ public class MainActivity extends AppCompatActivity {
         search_By_Location.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                weatherDataService.getCityForeCastByID(searchWeatherData.getText().toString(), new WeatherDataService.VolleyResponseListener() {
+                    @Override
+                    public void onError(String message) {
+                        Toast.makeText(MainActivity.this, "Oops something is wrong...", Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onResponse(String cityID) {
+                        Toast.makeText(MainActivity.this, "City ID = " + cityID, Toast.LENGTH_SHORT).show();
+                    }
+                });
 
             }
         });

@@ -12,11 +12,19 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class WeatherDataService {
 
     static Context context;
+
+    public interface VolleyResponseListener{
+        void onError(String message);
+
+        void onResponse(String cityID);
+
+    }
 
     public WeatherDataService(Context context) {
         this.context = context;
@@ -24,7 +32,7 @@ public class WeatherDataService {
 
     public static final String QUERY_FOR_CITY_ID = "https://www.metaweather.com/api/location/search/?query=";
 
-    public static String getCityID(String cityName) {
+    public void getCityID(String cityName,VolleyResponseListener volleyResponseListener ) {
 
             String url = QUERY_FOR_CITY_ID + cityName;
 
@@ -40,25 +48,27 @@ public class WeatherDataService {
                     }
 
 
-                    Toast.makeText(context, "City ID = " + cityID, Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(context, "City ID = " + cityID, Toast.LENGTH_SHORT).show();
+                    volleyResponseListener.onResponse(cityID);
 
                 }
             },new Response.ErrorListener() {
                 @Override
                 public void onErrorResponse(VolleyError error) {
-
+                    volleyResponseListener.onError("Oops something went wrong...");
                 }
             });
             MySingleton.getInstance(context).addToRequestQueue(request);
 
-            return(cityName);
+            //return cityName;
         }
+
+
+
+    public  getCityForeCastByID(String cityID){
+        List<WeatherReportModel> report = new ArrayList<>();
     }
-
-
-//    public List<WeatherReportModel> getCityForeCastByID(String cityID){
-//
-//    }
+}
 //
 //    public List<WeatherReportModel> getCityForeCastByName(String cityName) {
 //
