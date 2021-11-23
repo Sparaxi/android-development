@@ -17,7 +17,7 @@ import java.util.List;
 
 public class WeatherDataService {
 
-    static Context context;
+    public static final String QUERY_FOR_CITY_ID = "https://www.metaweather.com/api/location/search/?query=";
 
     public interface VolleyResponseListener{
         void onError(String message);
@@ -27,12 +27,20 @@ public class WeatherDataService {
     }
 
     public WeatherDataService(Context context) {
+
         this.context = context;
     }
 
-    public static final String QUERY_FOR_CITY_ID = "https://www.metaweather.com/api/location/search/?query=";
+    public interface VolleyResponseListener{
+     void onError(String message);
 
     public void getCityID(String cityName,VolleyResponseListener volleyResponseListener ) {
+
+    }
+
+
+
+    public  String getCityID(String cityName, VolleyResponseListener volleyResponseListener) {
 
             String url = QUERY_FOR_CITY_ID + cityName;
 
