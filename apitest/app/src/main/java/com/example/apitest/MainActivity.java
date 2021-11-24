@@ -22,10 +22,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity {
-
-
-
-    WeatherDataService weatherDataService = new WeatherDataService(MainActivity.this);
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
         search_By_Location = findViewById(R.id.weather_By_ID);
         city_Location = findViewById(R.id.city_Location);
         searchWeatherData = findViewById(R.id.search_Weather_Location);
+
+        final WeatherDataService weatherDataService = new WeatherDataService(MainActivity.this);
 
         search_ByCity.setOnClickListener(new View.OnClickListener() {
             @Override
