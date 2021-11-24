@@ -63,15 +63,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                weatherDataService.getCityForeCastByID(searchWeatherData.getText().toString(), new WeatherDataService.VolleyResponseListener() {
+                weatherDataService.getCityForeCastByID(searchWeatherData.getText().toString(), new WeatherDataService.ForeCastByIDResponse() {
                     @Override
                     public void onError(String message) {
-                        Toast.makeText(MainActivity.this, "Oops something is wrong...", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivity.this, "Oops something went wrong", Toast.LENGTH_SHORT).show();
                     }
 
                     @Override
-                    public void onResponse(String cityID) {
-                        Toast.makeText(MainActivity.this, "City ID = " + cityID, Toast.LENGTH_SHORT).show();
+                    public void onResponse(WeatherReportModel weatherReportModel) {
+                        Toast.makeText(MainActivity.this, weatherReportModel.toString(), Toast.LENGTH_SHORT).show();
                     }
                 });
 
