@@ -34,12 +34,10 @@ public class MainActivity extends AppCompatActivity {
         Button search_By_Location;
         Button city_Location;
 
-        EditText searchWeatherData;
-
         search_ByCity = findViewById(R.id.search_ByCity);
         search_By_Location = findViewById(R.id.weather_By_ID);
         city_Location = findViewById(R.id.city_Location);
-        searchWeatherData = findViewById(R.id.search_Weather_Location);
+        EditText searchWeatherData = findViewById(R.id.search_Weather_Location);
 
         final WeatherDataService weatherDataService = new WeatherDataService(MainActivity.this);
 

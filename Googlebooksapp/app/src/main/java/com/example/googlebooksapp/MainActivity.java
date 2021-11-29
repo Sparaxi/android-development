@@ -6,6 +6,19 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,36 +32,24 @@ public class MainActivity extends AppCompatActivity {
         gBooks_SearchButton = findViewById(R.id.gBooks_SearchButton);
         gBooks_SearchBooks = findViewById(R.id.gBooks_SearchBooks);
 
-//        BookDataservice bookDataservice = new BookDataservice(MainActivity.this);
-
         gBooks_SearchButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                // Instantiate the RequestQueue.
-                RequestQueue queue = Volley.newRequestQueue(this);
-                String url ="https://www.google.com";
+            public void onClick(View v) {
 
-// Request a string response from the provided URL.
-                StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
-                        new Response.Listener<String>() {
-                            @Override
-                            public void onResponse(String response) {
-                                // Display the first 500 characters of the response string.
-                                textView.setText("Response is: "+ response.substring(0,500));
-                            }
-                        }, new Response.ErrorListener() {https://www.googleapis.com/books/v1/volumes?q=
+                BookDataService.getBookID(gBooks_SearchBooks.getText().toString(), new BookDataService.VolleyResponseListener() {
                     @Override
-                    public void onErrorResponse(VolleyError error) {
-                        textView.setText("That didn't work!");
+                    public void onError(String message) {
+                        Toast.makeText(MainActivity.this, "oops something is wrong...", Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onResponse(String bookName) {
+                        Toast.makeText(MainActivity.this, "Here is your book," + bookName, Toast.LENGTH_SHORT).show();
                     }
                 });
 
-// Add the request to the RequestQueue.
-                queue.add(stringRequest);
-            }
-        });
 
-
-
+            }//onclick
+        });// onclicklistener
     }//onCreate
 }//EOC

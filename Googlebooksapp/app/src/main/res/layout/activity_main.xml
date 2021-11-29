@@ -22,7 +22,7 @@
         android:layout_above="@+id/gBooks_Listview"
         android:layout_marginBottom="150dp"
         android:minHeight="48dp"
-         />
+        android:text="enter your book name here" />
 
     <Button
         android:id="@+id/gBooks_SearchButton"
