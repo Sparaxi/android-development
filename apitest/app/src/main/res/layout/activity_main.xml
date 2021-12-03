@@ -44,12 +44,13 @@
         android:inputType="textPersonName"
         android:minHeight="48dp"
         android:text="Name"
-        android:autofillHints="" />
+        />
 
     <ListView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-
+        android:layout_height="510dp"
+        android:layout_below="@+id/search_Weather_Location"
+        android:layout_marginTop="37dp" />
 
 
 </RelativeLayout>

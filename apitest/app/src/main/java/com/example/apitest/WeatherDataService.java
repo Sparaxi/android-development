@@ -21,7 +21,7 @@ public class WeatherDataService {
     Context context;
     String cityID;
 
-    public static final String QUERY_FOR_CITY_ID = "https://www.metaweather.com/api/location/search/?query=";
+    public static final String QUERY_FOR_CITY_ID = "https://www.googleapis.com/books/v1/volumes?q=android&maxResults=1";
     public static final String QUERY_FOR_CITY_WEATHER_BY_ID = "https://www.metaweather.com/api/location/";
 
 

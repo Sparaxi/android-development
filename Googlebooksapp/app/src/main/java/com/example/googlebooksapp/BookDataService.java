@@ -15,6 +15,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,7 +36,15 @@ public class BookDataService {
     }
 
     public static String getBookID(String bookNameID, final VolleyResponseListener volleyResponseListener) {
-        String url = "https://www.googleapis.com/books/v1/volumes?q=quantum" + bookNameID;
+        String url = "https://www.googleapis.com/books/v1/volumes?q=" + bookNameID;
+
+        JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
+            @Override
+            public void onResponse(JSONArray response) {
+
+            }
+        });
+
     }
 
 
