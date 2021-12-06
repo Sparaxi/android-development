@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/gb_SearchButton"
+        android:layout_width="66dp"
+        android:layout_height="66dp"
+        android:text="S"
+        android:layout_alignTop="@+id/gb_EditTextButton"
+        android:layout_marginTop="50dp"
+        />
+
+    <EditText
+        android:id="@+id/gb_EditTextButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="25dp"
+        android:minHeight="48dp" />
+
+    <ListView
+        android:id="@+id/gb_ListView"
+        android:layout_width="match_parent"
+        android:layout_height="510dp"
+        android:layout_alignTop="@+id/gb_SearchButton"
+        android:layout_marginTop="75dp"
+
+        />
+
+
+
+</RelativeLayout>

@@ -8,22 +8,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonArrayRequest;
-import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
 
-import org.json.JSONArray;
-
-import java.lang.ref.ReferenceQueue;
 
 
 public class MainActivity extends AppCompatActivity {
 
+
+    final GbooksDataService gbooksDataService = new GbooksDataService(MainActivity.this);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,8 +27,20 @@ public class MainActivity extends AppCompatActivity {
         gBooks_Search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                GbooksDataService gbooksDataService = new GbooksDataService(MainActivity.this);
-                String bookName = gbooksDataService.getBookID(gBooks_EditText.getText().toString());
+                gbooksDataService.getBookID(gBooks_EditText.getText().toString(), new GbooksDataService.VolleyResponseListener() {
+                    @Override
+                    public void onResponse(String bookID) {
+                        Toast.makeText(MainActivity.this, "book Title" + bookID, Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onError(String message) {
+                        Toast.makeText(MainActivity.this, "Json error" , Toast.LENGTH_SHORT).show();
+
+                    }
+
+
+                });
 
             }
         });

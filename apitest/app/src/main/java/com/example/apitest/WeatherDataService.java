@@ -21,7 +21,7 @@ public class WeatherDataService {
     Context context;
     String cityID;
 
-    public static final String QUERY_FOR_CITY_ID = "https://www.googleapis.com/books/v1/volumes?q=android&maxResults=1";
+    public static final String QUERY_FOR_CITY_ID = "https://mangadb-search.herokuapp.com/mangadb/search?q=chainsaw+man&nsfw=false&limit=12&skip=0";
     public static final String QUERY_FOR_CITY_WEATHER_BY_ID = "https://www.metaweather.com/api/location/";
 
 
@@ -45,16 +45,16 @@ public class WeatherDataService {
         JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
-                String cityID = "";
+                cityID = "";
                 try {
                     JSONObject cityInfo = response.getJSONObject(0);
-                    cityID = cityInfo.getString("woeid");
+                    cityID = cityInfo.getString("title");
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
 
 
-                //Toast.makeText(context, "City ID = " + cityID, Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, "City ID = " + cityID, Toast.LENGTH_SHORT).show();
                 volleyResponseListener.onResponse(cityID);
 
             }

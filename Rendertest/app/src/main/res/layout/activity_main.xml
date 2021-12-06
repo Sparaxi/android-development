@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/weather_By_ID"
+        android:layout_width="95dp"
+        android:layout_height="60dp"
+        android:textSize="11sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="@string/weather_by_id"
+        />
+
+    <Button
+        android:id="@+id/city_Location"
+        android:layout_width="95dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="16dp"
+        android:layout_toEndOf="@+id/weather_By_ID"
+        android:text="@string/city_Location"
+        android:textSize="11sp" />
+
+    <Button
+        android:id="@+id/search_ByCity"
+        android:layout_width="95dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="16dp"
+        android:textSize="11sp"
+        android:layout_marginEnd="50dp"
+        android:layout_toStartOf="@+id/weather_By_ID"
+        android:text="@string/search_bCity" />
+
+    <EditText
+        android:id="@+id/search_Weather_Location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/weather_By_ID"
+        android:layout_marginTop="8dp"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:text="Name"
+        android:autofillHints="" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+
+
+</RelativeLayout>
