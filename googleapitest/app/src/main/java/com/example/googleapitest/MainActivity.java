@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         gBooks_Search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String url = "https://www.googleapis.com/books/v1/volumes?q=android";
+                String url = "";
 
                 JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
                         (Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
