@@ -53,7 +53,6 @@ public class WeatherDataService {
                     e.printStackTrace();
                 }
 
-
                 Toast.makeText(context, "City ID = " + cityID, Toast.LENGTH_SHORT).show();
                 volleyResponseListener.onResponse(cityID);
 

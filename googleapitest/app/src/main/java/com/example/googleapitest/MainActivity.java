@@ -9,18 +9,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.android.volley.Request;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonArrayRequest;
-import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.StringRequest;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,30 +25,23 @@ public class MainActivity extends AppCompatActivity {
         TextView gb_TextView;
         gb_TextView = findViewById(R.id.gb_textView);
 
+        final GbookDataservice gbookDataservice = new GbookDataservice(MainActivity.this);
+
         gBooks_Search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String url = "";
+                gbookDataservice.getBookID(gBooks_EditText.getText().toString(), new GbookDataservice.VolleyResponseListener() {
+                    @Override
+                    public void onError(String message) {
+                        Toast.makeText(MainActivity.this, "something went wrong", Toast.LENGTH_SHORT).show();
+                    }
 
-                JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
-                        (Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(String bookID) {
+//                        Toast.makeText(MainActivity.this, "" + bookID, Toast.LENGTH_SHORT).show();
 
-                            @Override
-                            public void onResponse(JSONObject response) {
-
-                                gb_TextView.setText("Response: " + response.toString());
-                            }
-                        }, new Response.ErrorListener() {
-
-                            @Override
-                            public void onErrorResponse(VolleyError error) {
-                                Toast.makeText(MainActivity.this, "Something went wrong.", Toast.LENGTH_SHORT).show();
-
-                            }
-                        });
-
-// Access the RequestQueue through your singleton class.
-                MySingleton.getInstance(MainActivity.this).addToRequestQueue(jsonObjectRequest);
+                    }
+                });
             }
         });
     }

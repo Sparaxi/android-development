@@ -28,10 +28,9 @@
         android:id="@+id/gb_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
         android:layout_marginLeft="250dp"
-        android:text=""
-        />
+        android:layout_marginTop="100dp"
+        android:text="Dit is een Test" />
 
     <ListView
         android:id="@+id/gb_ListView"
