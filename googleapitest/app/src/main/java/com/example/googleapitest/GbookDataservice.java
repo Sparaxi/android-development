@@ -15,11 +15,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GbookDataservice {
-    String bookVolume;
-    String bookID;
+
     Context context;
 
     public static final String GOOGLE_API_BOOK_SEARCH = "https://www.googleapis.com/books/v1/volumes?q=";
+
+
 
 
     public GbookDataservice(Context context) {
@@ -29,36 +30,45 @@ public class GbookDataservice {
     public interface VolleyResponseListener{
         void onError(String message);
 
-        void onResponse(String bookID);
+        void onResponse(List<GbooksStringStorage> gbooksStringStorages);
     }
 
     public void getBookID(String bookName, final VolleyResponseListener volleyResponseListener){
-        String url = GOOGLE_API_BOOK_SEARCH + bookName;
+        List<GbooksStringStorage> gbooksStringStorages = new ArrayList<>();
+
+        String url = GOOGLE_API_BOOK_SEARCH + bookName + "&maxResults=10";
 
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
                 (Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
 
                     @Override
                     public void onResponse(JSONObject response) {
-                       bookID = "";
-                       bookVolume = "";
                         try {
                             JSONArray bookInfo = response.getJSONArray("items");
-                            bookID = bookInfo.getString(2);
+//                            JSONObject item = bookInfo.getJSONObject(0);
+//                            Toast.makeText(context, "" + item.getJSONObject("volumeInfo").getString("subtitle"), Toast.LENGTH_SHORT).show();
+//                              Toast.makeText(context, "" + bookInfo, Toast.LENGTH_SHORT).show();
 
 
-//                            Toast.makeText(context, "" + bookInfo.getJSONObject(3).getJSONObject("volumeInfo"), Toast.LENGTH_SHORT).show();
+                            GbooksStringStorage gb_volume_info = new GbooksStringStorage();
+
+                            for (int i = 0; i < bookInfo.length(); i++) {
+                                JSONObject items = bookInfo.getJSONObject(i);
+                                gb_volume_info.setTitle(items.getJSONObject("volumeInfo").getString("title"));
+                                gb_volume_info.setSubtitle(items.getJSONObject("volumeInfo").getString("subtitle"));
+//                                Toast.makeText(context, "" + gb_volume_info, Toast.LENGTH_SHORT).show();
+
+                            }
+
+
+                                volleyResponseListener.onResponse(gbooksStringStorages);
+
+
+
                         } catch (Exception e) {
                             e.printStackTrace();
 
                         }
-
-
-//                        Toast.makeText(context, "" + bookVolume, Toast.LENGTH_SHORT).show();
-
-//                        Toast.makeText(context, "" + bookID, Toast.LENGTH_SHORT).show();
-                        volleyResponseListener.onResponse(bookID);
-
 
                     }
                 }, new Response.ErrorListener() {
@@ -76,15 +86,8 @@ public class GbookDataservice {
 
     }
 
-    public interface GBooksResponse{
-        void onError(String message);
-
-        void onResponse(List<GbooksStringStorage> gbooksStringStorages);
-    }
-
-    public void getGBooksResponse(String bookID, GBooksResponse gBooksResponse){
-        List<GbooksStringStorage> gbooksStringStorages = new ArrayList<>();
 
 
-    }
+
 }
+

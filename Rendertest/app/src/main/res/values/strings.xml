@@ -1,6 +1,0 @@
-<resources>
-    <string name="app_name">Render test</string>
-    <string name="weather_by_id" />
-    <string name="city_Location" />
-    <string name="search_bCity" />
-</resources>
