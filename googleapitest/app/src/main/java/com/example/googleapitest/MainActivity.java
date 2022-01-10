@@ -25,8 +25,7 @@ public class MainActivity extends AppCompatActivity {
         gBooks_Search = findViewById(R.id.gb_SearchButton);
         EditText gBooks_EditText;
         gBooks_EditText = findViewById(R.id.gb_EditTextButton);
-        TextView gb_TextView;
-        gb_TextView = findViewById(R.id.gb_textView);
+
 
         ListView gb_listview;
         gb_listview = findViewById(R.id.gb_ListView);
@@ -48,7 +47,6 @@ public class MainActivity extends AppCompatActivity {
                     public void onResponse(List<GbooksStringStorage> gbooksStringStorages) {
                         ArrayAdapter arrayAdapter = new ArrayAdapter(MainActivity.this, android.R.layout.simple_list_item_1, gbooksStringStorages);
                         gb_listview.setAdapter(arrayAdapter);
-                        gb_TextView.setText("" + gbooksStringStorages);
 
                     }
                 });

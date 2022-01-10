@@ -36,7 +36,7 @@ public class GbookDataservice {
     public void getBookID(String bookName, final VolleyResponseListener volleyResponseListener){
         List<GbooksStringStorage> gbooksStringStorages = new ArrayList<>();
 
-        String url = GOOGLE_API_BOOK_SEARCH + bookName + "&maxResults=10";
+        String url = GOOGLE_API_BOOK_SEARCH + bookName;
 
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
                 (Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
@@ -45,19 +45,26 @@ public class GbookDataservice {
                     public void onResponse(JSONObject response) {
                         try {
                             JSONArray bookInfo = response.getJSONArray("items");
-//                            JSONObject item = bookInfo.getJSONObject(0);
-//                            Toast.makeText(context, "" + item.getJSONObject("volumeInfo").getString("subtitle"), Toast.LENGTH_SHORT).show();
-//                              Toast.makeText(context, "" + bookInfo, Toast.LENGTH_SHORT).show();
 
 
-                            GbooksStringStorage gb_volume_info = new GbooksStringStorage();
+
 
                             for (int i = 0; i < bookInfo.length(); i++) {
+                                GbooksStringStorage gb_volume_info = new GbooksStringStorage();
                                 JSONObject items = bookInfo.getJSONObject(i);
-                                gb_volume_info.setTitle(items.getJSONObject("volumeInfo").getString("title"));
-                                gb_volume_info.setSubtitle(items.getJSONObject("volumeInfo").getString("subtitle"));
-//                                Toast.makeText(context, "" + gb_volume_info, Toast.LENGTH_SHORT).show();
+                                if (items.getJSONObject("volumeInfo").has("title")) {
+                                    gb_volume_info.setTitle(items.getJSONObject("volumeInfo").getString("title"));
+                                }
+                                if (items.getJSONObject("volumeInfo").has("subtitle")) {
+                                    gb_volume_info.setSubtitle(items.getJSONObject("volumeInfo").getString("subtitle"));
+                                }
+                                if (items.getJSONObject("volumeInfo").has("authors")) {
+                                    gb_volume_info.setAuthors(items.getJSONObject("volumeInfo").getJSONArray("authors").getString(0));
+                                }
 
+//                                gb_volume_info.setSubtitle(items.getJSONObject("volumeInfo").getString("subtitle"));
+//                                Toast.makeText(context, "" + gb_volume_info, Toast.LENGTH_SHORT).show()
+                                gbooksStringStorages.add(gb_volume_info);
                             }
 
 

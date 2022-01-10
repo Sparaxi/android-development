@@ -1,9 +1,13 @@
 package com.example.googleapitest;
 
 
+import org.json.JSONArray;
+
 public class GbooksStringStorage {
    private String title;
    private String subtitle;
+   private String authors;
+
 
 
     public GbooksStringStorage() {
@@ -12,8 +16,27 @@ public class GbooksStringStorage {
 
     @Override
     public String toString() {
-        return  title + '\'' +  subtitle + '\''
+        if( subtitle == null || subtitle.isEmpty()){
+            subtitle = (" No subtitle available");
+        }
+
+        if( authors == null || authors.isEmpty()){
+            authors = (" No Author available");
+        }
+
+        return
+                "Title: " + title +
+                ", Subtitle: " + subtitle +
+                ", Author: " + authors
                 ;
+    }
+
+    public String getAuthors() {
+        return authors;
+    }
+
+    public void setAuthors(String authors) {
+        this.authors = authors;
     }
 
     public String getTitle() {
@@ -33,4 +56,6 @@ public class GbooksStringStorage {
     }
 
 
+    public void setAuthors(JSONArray jsonArray) {
+    }
 }

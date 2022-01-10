@@ -8,12 +8,12 @@
 
     <Button
         android:id="@+id/gb_SearchButton"
-        android:layout_width="66dp"
-        android:layout_height="66dp"
-        android:text="S"
+        android:layout_width="171dp"
+        android:layout_height="61dp"
         android:layout_alignTop="@+id/gb_EditTextButton"
         android:layout_marginTop="50dp"
-        />
+        android:layout_centerHorizontal="true"
+        android:text="Search" />
 
     <EditText
         android:id="@+id/gb_EditTextButton"
@@ -22,15 +22,6 @@
         android:layout_alignParentTop="true"
         android:layout_marginTop="25dp"
         android:minHeight="48dp" />
-
-
-    <TextView
-        android:id="@+id/gb_textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="250dp"
-        android:layout_marginTop="100dp"
-        android:text="Dit is een Test" />
 
     <ListView
         android:id="@+id/gb_ListView"
