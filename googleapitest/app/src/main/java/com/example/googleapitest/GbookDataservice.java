@@ -1,7 +1,7 @@
 package com.example.googleapitest;
 
 import android.content.Context;
-import android.widget.Toast;
+
 
 import com.android.volley.Request;
 import com.android.volley.Response;
@@ -19,9 +19,6 @@ public class GbookDataservice {
     Context context;
 
     public static final String GOOGLE_API_BOOK_SEARCH = "https://www.googleapis.com/books/v1/volumes?q=";
-
-
-
 
     public GbookDataservice(Context context) {
         this.context = context;
@@ -45,10 +42,6 @@ public class GbookDataservice {
                     public void onResponse(JSONObject response) {
                         try {
                             JSONArray bookInfo = response.getJSONArray("items");
-
-
-
-
                             for (int i = 0; i < bookInfo.length(); i++) {
                                 GbooksStringStorage gb_volume_info = new GbooksStringStorage();
                                 JSONObject items = bookInfo.getJSONObject(i);
