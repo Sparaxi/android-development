@@ -14,9 +14,7 @@ public class NewsStringStorage {
 
     @Override
     public String toString() {
-        return "NewsStringStorage{" +
-                "webTitle='" + webTitle + '\'' +
-                '}';
+        return  webTitle ;
     }
 
     public String getWebTitle() {
